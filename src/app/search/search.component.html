@@ -1,0 +1,41 @@
+<mat-card>
+  <h1>Régens időjárás előrejelzés</h1>
+  <div>Add meg a települést</div>
+  <div>
+    <mat-form-field>
+      <mat-select>
+        <!-- TODO use the cities array to populate this select with options -->
+        <mat-option [value]="'Option 1'">Option 1</mat-option>
+        <mat-option [value]="'Option 2'">Option 2</mat-option>
+        <mat-option [value]="'Option 3'">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button>Mutasd az időjárást</button>
+  </div>
+  <div>
+    <h1>Budapest</h1><!-- TODO this should match the selected city-->
+    <table>
+      <tr>
+        <th>Dátum</th>
+        <th>Idő</th>
+        <th>Várható hőmérséklet</th>
+      </tr>
+      <!-- TODO the table rows should come from the results property -->
+      <tr>
+        <td>2022. 07. 21</td>
+        <td>0:00</td>
+        <td>27 °C</td>
+      </tr>
+      <tr>
+        <td>2022. 07. 21</td>
+        <td>1:00</td>
+        <td>26 °C</td>
+      </tr>
+      <tr>
+        <td>2022. 07. 21</td>
+        <td>2:00</td>
+        <td>24 °C</td>
+      </tr>
+    </table>
+  </div>
+</mat-card>
