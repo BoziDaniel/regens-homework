@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
 import { CITIES, City } from "../data/cities";
 import { SearchService, WeatherRow } from "./search.service";
 
@@ -11,15 +12,14 @@ export class SearchComponent implements OnInit {
 
   cities: City[] = CITIES;
   results: WeatherRow[] = [];
-
-  constructor(private service: SearchService) {
+  selectedCity: FormControl<City> = new FormControl(this.cities[0], {nonNullable: true})
+  constructor(private searchService: SearchService) {
   }
 
   public ngOnInit(): void {
   }
 
   public updateResults(city: City): void {
-    let results = this.service.getWeatherByCity(city);
-    // TODO set results
+    this.results = this.searchService.getWeatherByCity(city);
   }
 }
